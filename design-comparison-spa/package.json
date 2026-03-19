@@ -9,8 +9,7 @@
     "serve": "vite preview"
   },
   "dependencies": {
-    "gsap": "^3.9.1",
-    "gsap/ScrollTrigger": "^3.9.1"
+    "gsap": "^3.9.1"
   },
   "devDependencies": {
     "vite": "^2.6.4"
