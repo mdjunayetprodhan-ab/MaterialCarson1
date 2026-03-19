@@ -1,7 +1,8 @@
 import { defineConfig } from 'vite';
 
 export default defineConfig({
-  root: 'design-comparison-spa',
+  // Must match the GitHub repository name for GitHub Pages deployment
+  base: '/MaterialCarson1/',
   build: {
     outDir: 'dist',
     rollupOptions: {
