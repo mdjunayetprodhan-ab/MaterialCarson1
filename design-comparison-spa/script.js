@@ -1,15 +1,73 @@
-"use strict";
+﻿"use strict";
 
 document.addEventListener("DOMContentLoaded", () => {
   initRipple();
   initChaosScroll();
-  initCursor();
   initMaterialLab();
   initTokensA11y();
   initTokensInteractive();
   initCarsonExtras();
+  initThemeSwitcher();
 });
 
+/* ---------- Theme Switcher ---------- */
+function initThemeSwitcher() {
+  const dots = document.querySelectorAll('.theme-dot');
+  const themes = {
+    blue:   { primary: '#aecbfa', bg: '#f8f9fa' },
+    green:  { primary: '#a5d6a7', bg: '#f1f8e9' },
+    purple: { primary: '#ce93d8', bg: '#f3e5f5' },
+    red:    { primary: '#ef9a9a', bg: '#ffebee' },
+    dark:   { primary: '#8ab4f8', bg: '#202124' }
+  };
+
+  const themeSwitcher = document.querySelector('.theme-switcher');
+  const themeFab = document.getElementById('themeFab');
+
+  if (themeSwitcher && themeFab) {
+    // Toggle FAB options
+    themeFab.addEventListener('click', () => {
+      themeSwitcher.classList.toggle('open');
+    });
+
+    // Hide FAB on Carson section using Intersection Observer
+          const carsonSection = document.getElementById('carson');
+      if (carsonSection) {
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              themeSwitcher.style.opacity = '0';
+              themeSwitcher.style.pointerEvents = 'none';
+              themeSwitcher.classList.remove('open');
+            } else {
+              themeSwitcher.style.opacity = '1';
+              themeSwitcher.style.pointerEvents = 'auto';
+            }
+          });
+        }, { 
+          root: document.querySelector('main'),
+          threshold: 0.1 
+        });
+        themeSwitcher.style.transition = 'opacity 0.3s ease';
+        observer.observe(carsonSection);
+      }
+
+    
+    // Handle color dots
+    dots.forEach(dot => {
+      dot.addEventListener('click', () => {
+        const t = themes[dot.dataset.color];   
+        if (t) {
+          document.documentElement.style.setProperty('--md-primary', t.primary);
+          document.documentElement.style.setProperty('--md-bg', t.bg);
+
+          dots.forEach(d => d.classList.remove('active'));
+          dot.classList.add('active');
+        }
+      });
+    });
+  }
+}
 /* ---------- Ripple ---------- */
 function initRipple() {
   document.querySelectorAll(".ripple").forEach((el) => {
@@ -31,67 +89,23 @@ function initRipple() {
 /* ---------- Carson horizontal scroll ---------- */
 function initChaosScroll() {
   const main = document.querySelector("main");
-  const carson = document.getElementById("carson");
   const track = document.getElementById("chaosTrack");
-  if (!main || !carson || !track) return;
+  const carson = document.getElementById("carson");
+  if (!main || !track || !carson || typeof gsap === 'undefined') return;
 
-  let progress = 0;       // current 0..1
-  let target = 0;         // target 0..1
-  let rafId = 0;
+  gsap.registerPlugin(ScrollTrigger);
 
-  const SPEED = 0.00035;  // было слишком быстро
-  const LERP = 0.12;      // плавность
-
-  const clamp = (v, min, max) => Math.max(min, Math.min(max, v));
-
-  function maxX() {
-    return Math.max(track.scrollWidth - window.innerWidth, 0);
-  }
-
-  function render() {
-    track.style.transform = `translate3d(${-maxX() * progress}px,0,0)`;
-  }
-
-  function isCarsonActive() {
-    const r = carson.getBoundingClientRect();
-    const vh = window.innerHeight;
-    return r.top < vh * 0.6 && r.bottom > vh * 0.4;
-  }
-
-  function animate() {
-    progress += (target - progress) * LERP;
-    if (Math.abs(target - progress) < 0.0005) progress = target;
-    render();
-    rafId = requestAnimationFrame(animate);
-  }
-
-  function onWheel(e) {
-    if (!isCarsonActive()) return;
-
-    const canMoveInside =
-      (e.deltaY > 0 && target < 1) ||
-      (e.deltaY < 0 && target > 0);
-
-    if (!canMoveInside) return;
-
-    target = clamp(target + e.deltaY * SPEED, 0, 1);
-    e.preventDefault(); // не перескакиваем секцию
-  }
-
-  main.addEventListener("wheel", onWheel, { passive: false });
-  window.addEventListener("resize", render);
-
-  cancelAnimationFrame(rafId);
-  animate();
-}
-
-/* ---------- Custom cursor ---------- */
-function initCursor() {
-  const cursor = document.getElementById("cursor");
-  if (!cursor) return;
-  window.addEventListener("mousemove", (e) => {
-    cursor.style.left = `${e.clientX}px`;
-    cursor.style.top = `${e.clientY}px`;
+  gsap.to(track, {
+    x: () => -(track.scrollWidth - window.innerWidth),
+    ease: "none",
+    scrollTrigger: {
+      trigger: carson,
+      scroller: main,
+      start: "top top",
+      end: "bottom bottom",
+      scrub: 1,
+      invalidateOnRefresh: true
+    }
   });
 }
 
@@ -310,7 +324,7 @@ function initTokensInteractive() {
     applyColor(e.target.value);
   });
 
-  applyColor(customColor.value || "#1a73e8");
+  applyColor(customColor.value || "#aecbfa");
 }
 
 /* ---------- Carson extras ---------- */
@@ -328,3 +342,12 @@ function initCarsonExtras() {
     });
   });
 }
+
+
+
+
+
+
+
+
+
