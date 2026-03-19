@@ -1,4 +1,4 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang="ru">
 <head>
   <meta charset="UTF-8" />
@@ -8,8 +8,6 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&family=Cormorant+Garamond:wght@400;700&family=Permanent+Marker&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./styles.css" />
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
 </head>
 <body>
   <main>
@@ -78,10 +76,10 @@
 
           <div class="tokens-interactive">
             <div class="token-control">
-              <button class="token-btn t1" data-token="primary" data-hex="#aecbfa">
+              <button class="token-btn t1" data-token="primary" data-hex="#1a73e8">
                 <span class="token-circle"></span>
                 <span>Primary</span>
-                <small>#aecbfa</small>
+                <small>#1A73E8</small>
               </button>
               <button class="token-btn t2" data-token="secondary" data-hex="#00acc1">
                 <span class="token-circle"></span>
@@ -102,9 +100,9 @@
 
             <div class="token-editor" id="tokenEditor">
               <label>Твой цвет
-                <input id="customColor" type="color" value="#aecbfa" />
+                <input id="customColor" type="color" value="#1a73e8" />
               </label>
-              <p id="tokenOutput" class="token-output">#aecbfa</p>
+              <p id="tokenOutput" class="token-output">#1A73E8</p>
             </div>
 
             <div class="token-preview" id="tokenPreview">
@@ -129,7 +127,7 @@
                   <select id="fgSelect">
                     <option value="#1f1f1f">On Surface</option>
                     <option value="#ffffff">White</option>
-                    <option value="#aecbfa">Primary</option>
+                    <option value="#1a73e8">Primary</option>
                     <option value="#d8ff00">Acid</option>
                   </select>
                 </span>
@@ -141,7 +139,7 @@
                   <select id="bgSelect">
                     <option value="#ffffff">Surface</option>
                     <option value="#1f1f1f">Dark</option>
-                    <option value="#aecbfa">Primary</option>
+                    <option value="#1a73e8">Primary</option>
                     <option value="#f6f8fc">Light BG</option>
                   </select>
                 </span>
@@ -157,101 +155,6 @@
 
             <p id="contrastOut" class="contrast-badge">Contrast: —</p>
             <p id="a11yPreview" class="a11y-preview">Проверочный текст для оценки читаемости.</p>
-          </div>
-        </article>
-
-                <!-- New Material Example UI -->
-        <article class="card mat-example-card full-row">
-          <div class="example-info">
-            <h2>Пример интерфейса</h2>
-            <p class="muted">Базовые паттерны Material Design (App Bar, Cards, Lists, FAB) в действии. Разнообразные макеты на основе 12-колоночной сетки.</p>
-          </div>
-          
-          <div class="mockups-container">
-            <!-- Mockup 1: Inbox -->
-            <div class="md-mockup">
-              <header class="md-mockup-appbar">
-                <div class="md-mockup-menu"></div>
-                <span class="md-mockup-title">Inbox</span>
-                <div class="md-mockup-search"></div>
-              </header>
-              <div class="md-mockup-content">
-                <div class="md-mockup-item ripple">
-                  <div class="md-mockup-avatar avatar-1"></div>
-                  <div class="md-mockup-text">
-                    <div class="md-mockup-line w-full"></div>
-                    <div class="md-mockup-line w-half"></div>
-                  </div>
-                </div>
-                <div class="md-mockup-item ripple">
-                  <div class="md-mockup-avatar avatar-2"></div>
-                  <div class="md-mockup-text">
-                    <div class="md-mockup-line w-full"></div>
-                    <div class="md-mockup-line w-half"></div>
-                  </div>
-                </div>
-                <div class="md-mockup-item ripple">
-                  <div class="md-mockup-avatar avatar-3"></div>
-                  <div class="md-mockup-text">
-                    <div class="md-mockup-line w-full"></div>
-                    <div class="md-mockup-line w-half"></div>
-                  </div>
-                </div>
-              </div>
-              <button class="md-mockup-fab ripple">+</button>
-            </div>
-
-            <!-- Mockup 2: Feed -->
-            <div class="md-mockup">
-              <header class="md-mockup-appbar variant-surface">
-                <div class="md-mockup-menu variant-menu"></div>
-                <span class="md-mockup-title" style="color: var(--md-text)">Explore</span>
-              </header>
-              <div class="md-mockup-content mock-feed">
-                <div class="md-mockup-card ripple">
-                  <div class="md-mockup-card-img"></div>
-                  <div class="md-mockup-card-body">
-                    <div class="md-mockup-line w-full"></div>
-                    <div class="md-mockup-line w-half"></div>
-                  </div>
-                </div>
-                <div class="md-mockup-card ripple">
-                  <div class="md-mockup-card-body">
-                    <div class="md-mockup-line w-full"></div>
-                    <div class="md-mockup-line" style="width: 70%"></div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Mockup 3: Settings -->
-            <div class="md-mockup">
-              <header class="md-mockup-appbar">
-                <span class="md-mockup-title" style="margin-left: 12px;">Profile</span>
-              </header>
-              <div class="md-mockup-content" style="padding: 24px 16px;">
-                <div class="mock-profile-header">
-                  <div class="md-mockup-avatar large-av"></div>
-                  <div class="md-mockup-text">
-                    <div class="md-mockup-line w-full" style="height: 14px;"></div>
-                    <div class="md-mockup-line w-half"></div>
-                  </div>
-                </div>
-                <div class="mock-setting">
-                  <div class="md-mockup-switch active"></div>
-                  <div class="md-mockup-line" style="width: 50%; margin: 0;"></div>
-                </div>
-                <div class="mock-setting">
-                  <div class="md-mockup-switch"></div>
-                  <div class="md-mockup-line" style="width: 70%; margin: 0;"></div>
-                </div>
-                <div class="mock-setting">
-                  <div class="md-mockup-switch active"></div>
-                  <div class="md-mockup-line" style="width: 40%; margin: 0;"></div>
-                </div>
-              </div>
-              <button class="md-mockup-fab ripple" style="border-radius: 8px; width: auto; padding: 0 16px; font-weight: 500; font-size: 14px; bottom: 16px; right: 16px;">Save</button>
-            </div>
           </div>
         </article>
       </div>
@@ -325,71 +228,80 @@
       </div>
     </section>
 
-    <!-- SECTION 4: Split Comparison -->
-    <section id="study" class="section material">
-  <header class="topbar">
-    <div class="logo-dot"></div>
-    <span>Синтез подходов</span>
-  </header>
+    <!-- SECTION 4: Study/Conclusion -->
+    <section id="study" class="section study">
+      <div class="study-container">
+        <h2>Сравнение подходов</h2>
+        <p class="study-lead">
+          Один и тот же инструмент — веб-дизайн — может быть либо системой правил, либо эмоциональным экспериментом.
+        </p>
 
-  <div class="grid">
-    <h1 class="h1">Сравнение философий</h1>
-    <p class="lead">Структура против Экспрессии. Два полярных подхода к визуальной коммуникации в интерфейсах и медиа.</p>
+        <div class="compare-grid">
+          <article class="compare-card">
+            <h3>Material (Дуарте)</h3>
+            <ul>
+              <li>Четкая иерархия</li>
+              <li>Сетка и повторяемость</li>
+              <li>Высокая читабельность</li>
+              <li>Предсказуемое поведение интерфейса</li>
+            </ul>
+          </article>
 
-    <article class="card core" style="grid-column: span 6;">
-      <h2>Матиас Дуарте</h2>
-      <p class="muted">Material Design / Структура</p>
-      <div style="margin-top: 16px;">
-        <h4 style="margin-bottom: 4px;">Парадигма</h4>
-        <p style="margin-bottom: 16px; font-size: 14px;">Универсальность, масштабируемость и абсолютная предсказуемость. Интерфейс служит незаметной оболочкой для решения задач пользователя.</p>
-        
-        <h4 style="margin-bottom: 4px;">Пространство</h4>
-        <p style="margin-bottom: 16px; font-size: 14px;">Строгая 12-колоночная сетка. Многоуровневость и глубина формируются через физически достоверные тени (Elevation).</p>
-        
-        <h4 style="margin-bottom: 4px;">Типографика</h4>
-        <p style="font-size: 14px;">Выверенный ритм и утилитарность. Шрифты подчинены сетке, контрасту и главной цели — скорости считывания информации.</p>
+          <article class="compare-card">
+            <h3>Carson (хаос)</h3>
+            <ul>
+              <li>Нарушение правил</li>
+              <li>Эмоция важнее ясности</li>
+              <li>Типографический конфликт</li>
+              <li>Экспериментальная композиция</li>
+            </ul>
+          </article>
+        </div>
+
+        <h3 class="mt">Таблица сравнения</h3>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Критерий</th>
+                <th>Material</th>
+                <th>Carson</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Цель</td>
+                <td>Удобство и ясность</td>
+                <td>Эмоциональный эффект</td>
+              </tr>
+              <tr>
+                <td>Сетка</td>
+                <td>Строгая 12-колоночная</td>
+                <td>Намеренно ломается</td>
+              </tr>
+              <tr>
+                <td>Типографика</td>
+                <td>Иерархичная и читаемая</td>
+                <td>Контрастная, хаотичная</td>
+              </tr>
+              <tr>
+                <td>Анимация</td>
+                <td>Плавная, физичная</td>
+                <td>Резкая, дерганая</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3 class="mt">Вывод</h3>
+        <p>
+          Дуарте показывает, как сделать интерфейс универсальным и понятным, а Карсон — как превратить визуальную форму в высказывание.
+          В современном дизайне чаще всего работает баланс: структура + эмоция.
+        </p>
       </div>
-    </article>
-
-    <article class="card core" style="grid-column: span 6;">
-      <h2>Дэвид Карсон</h2>
-      <p class="muted">Grunge / Экспрессия</p>
-      <div style="margin-top: 16px;">
-        <h4 style="margin-bottom: 4px;">Парадигма</h4>
-        <p style="margin-bottom: 16px; font-size: 14px;">Дизайн как самостоятельный голос и контент. Отказ от функции сервиса ради создания эмоционального напряжения.</p>
-        
-        <h4 style="margin-bottom: 4px;">Пространство</h4>
-        <p style="margin-bottom: 16px; font-size: 14px;">Намеренное игнорирование классической сетки. Использование случайных перекрытий, смещений и конфликтов.</p>
-        
-        <h4 style="margin-bottom: 4px;">Типографика</h4>
-        <p style="font-size: 14px;">Текст становится визуальной формой. Намеренное ухудшение читаемости, рваный ритм и смешение гарнитур.</p>
-      </div>
-    </article>
-
-    <article class="card full-row" style="margin-top: 8px;">
-      <h2 style="margin-top: 6px;">Вывод</h2>
-      <p style="font-size: 15px; line-height: 1.6; margin-bottom: 6px;">Оба подхода имеют свое идеальное применение. Material Design — стандарт де-факто для продуктов, где важна продуктивность (приложения, сервисы). Подход Карсона остается мощнейшим инструментом для промо-сайтов, где эмоция важнее скорости чтения. В современном вебе все чаще можно встретить синтез: строгий UI-фундамент, соединенный с экспрессивной подачей контента.</p>
-    </article>
-  </div>
-</section>
+    </section>
   </main>
-
-    <div class="theme-switcher" id="themeSwitcher">
-    <button class="theme-fab ripple" id="themeFab" aria-label="Toggle themes"></button>
-    <div class="theme-options">
-      <button class="theme-dot" data-color="blue" style="background: #aecbfa;" title="Blue"></button>
-      <button class="theme-dot" data-color="green" style="background: #a5d6a7;" title="Green"></button>
-      <button class="theme-dot" data-color="purple" style="background: #ce93d8;" title="Purple"></button>
-      <button class="theme-dot" data-color="red" style="background: #ef9a9a;" title="Red"></button>
-      <button class="theme-dot" data-color="dark" style="background: #8ab4f8;" title="Dark"></button>
-    </div>
-  </div>
 
   <script src="./script.js"></script>
 </body>
 </html>
-
-
-
-
-
