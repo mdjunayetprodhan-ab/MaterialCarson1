@@ -77,7 +77,9 @@ function initChaosScroll() {
     e.preventDefault(); // не перескакиваем секцию
   }
 
-  main.addEventListener("wheel", onWheel, { passive: false });
+  // Use capture phase on window so preventDefault() fires before the
+  // scroll-snap mechanism on `main` can consume the event.
+  window.addEventListener("wheel", onWheel, { passive: false, capture: true });
   window.addEventListener("resize", render);
 
   cancelAnimationFrame(rafId);
