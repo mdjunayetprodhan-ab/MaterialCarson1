@@ -1750,26 +1750,45 @@ button[style*="color: #0f172a"] .ripple-wave {
   100% { transform: translate(0) }
 }
 
-@media(max-width: 800px) {
+@media (max-width: 850px) {
+  .bento-layout {
+    height: auto !important; /* Allow growing beyond 100vh on mobile */
+    padding: 40px 16px;
+    align-items: flex-start;
+    overflow-y: auto; /* Enable safe scrolling for tall content */
+  }
+  
   .bento-grid {
     grid-template-columns: 1fr;
+    grid-template-rows: auto !important;
+    max-height: none !important;
+    gap: 16px;
   }
-  .bento-final {
-    grid-column: 1;
+  
+  .bento-item {
+    padding: 24px;
+    border-radius: 20px; /* Material 3 mobile border radius */
+    min-height: 280px;
+  }
+  
+  .final-statement {
+    grid-column: 1 / -1;
+  }
+  
+  .final-statement-inner {
+    padding: 32px 24px;
+    border-radius: 20px;
+  }
+  
+  .bento-layout .study-title {
+    font-size: 2.2rem; /* Keep scale readable on phone */
+  }
+  
+  .bento-icon {
+    height: 48px;
+    min-height: 48px;
+    font-size: 2.2rem;
+    margin-bottom: 12px;
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
