@@ -5,6 +5,7 @@
   "main": "src/main.js",
   "scripts": {
     "dev": "vite",
+    "prebuild": "node -e \"require('fs').copyFileSync('script.js', 'public/script.js')\"",
     "build": "vite build",
     "serve": "vite preview"
   },
