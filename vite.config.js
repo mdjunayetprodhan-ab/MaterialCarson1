@@ -1,7 +1,6 @@
 import { defineConfig } from 'vite';
 
 export default defineConfig({
-  root: 'design-comparison-spa',
   build: {
     outDir: 'dist',
     rollupOptions: {
