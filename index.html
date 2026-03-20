@@ -1,4 +1,4 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="ru">
 <head>
   <meta charset="UTF-8" />
@@ -48,10 +48,10 @@
 
           <div class="lab-controls">
             <div class="seg" id="stateSwitch">
-              <button class="seg-btn active" data-state="default">Default</button>
-              <button class="seg-btn" data-state="hover">Hover</button>
-              <button class="seg-btn" data-state="pressed">Pressed</button>
-              <button class="seg-btn" data-state="disabled">Disabled</button>
+              <button class="ripple seg-btn active" data-state="default">Default</button>
+              <button class="ripple seg-btn" data-state="hover">Hover</button>
+              <button class="ripple seg-btn" data-state="pressed">Pressed</button>
+              <button class="ripple seg-btn" data-state="disabled">Disabled</button>
             </div>
 
             <label class="range-wrap">
@@ -76,22 +76,22 @@
 
           <div class="tokens-interactive">
             <div class="token-control">
-              <button class="token-btn t1" data-token="primary" data-hex="#1a73e8">
+              <button class="ripple token-btn t1" data-token="primary" data-hex="#1a73e8">
                 <span class="token-circle"></span>
                 <span>Primary</span>
                 <small>#1A73E8</small>
               </button>
-              <button class="token-btn t2" data-token="secondary" data-hex="#00acc1">
+              <button class="ripple token-btn t2" data-token="secondary" data-hex="#00acc1">
                 <span class="token-circle"></span>
                 <span>Secondary</span>
                 <small>#00ACC1</small>
               </button>
-              <button class="token-btn t3" data-token="surface" data-hex="#ffffff">
+              <button class="ripple token-btn t3" data-token="surface" data-hex="#ffffff">
                 <span class="token-circle"></span>
                 <span>Surface</span>
                 <small>#FFFFFF</small>
               </button>
-              <button class="token-btn t4" data-token="onsurface" data-hex="#1f1f1f">
+              <button class="ripple token-btn t4" data-token="onsurface" data-hex="#1f1f1f">
                 <span class="token-circle"></span>
                 <span>On Surface</span>
                 <small>#1F1F1F</small>
@@ -109,7 +109,7 @@
               <div class="preview-block">
                 <h4>Preview</h4>
                 <p>Токены применяются к интерфейсу в реальном времени.</p>
-                <button class="btn preview-btn">Action</button>
+                <button class="ripple btn preview-btn">Action</button>
               </div>
             </div>
           </div>
@@ -155,6 +155,78 @@
 
             <p id="contrastOut" class="contrast-badge">Contrast: —</p>
             <p id="a11yPreview" class="a11y-preview">Проверочный текст для оценки читаемости.</p>
+          </div>
+        </article>
+
+        <!-- MATERIAL 3 SHOWCASE WIDE SECTION -->
+        <article class="m3-showcase">
+          <h2 class="m3-showcase-title">Material Design 3 в действии</h2>
+          <p>Максимальное скругление форм, тональные(pastel) оттенки и выразительные FAB-кнопки (Floating Action Buttons).</p>
+          
+          <div class="m3-widgets layout-m3-visuals">
+            
+            <!-- Col 1: Lists -->
+            <div class="m3-col">
+              <div class="m3-card-list m3-interactive ripple" id="m3-list-1">
+                <div class="m3-list-icon">←</div>
+                <div class="m3-list-content">
+                  <div class="m3-list-title">Image editor</div>
+                  <div class="m3-list-sub">Refine your photo</div>
+                </div>
+                <div class="m3-fab-tonal dark">✓</div>
+              </div>
+
+              <div class="m3-card-list m3-interactive ripple" id="m3-list-2">
+                <div class="m3-list-icon">←</div>
+                <div class="m3-list-content">
+                  <div class="m3-list-title">Daily activities</div>
+                  <div class="m3-list-sub">Record new fitness goals</div>
+                </div>
+                <div class="m3-fab-tonal dark" id="m3-fab-plus">+</div>
+              </div>
+
+              <div class="m3-card-list m3-interactive ripple">
+                <div class="m3-list-icon">←</div>
+                <div class="m3-list-content">
+                  <div class="m3-list-title" style="font-size:1.5rem">Top 10 hiking trails</div>
+                  <div class="m3-list-sub">Discover popular trails</div>
+                </div>
+                <div class="m3-fab-tonal light" style="align-self:flex-start;">🔖</div>
+              </div>
+            </div>
+
+            <!-- Col 2: Pill Actions -->
+            <div class="m3-col center-col">
+              <div class="m3-pill-bar">
+                <span class="m3-icon-btn m3-interactive ripple">✓</span> <span class="m3-icon-btn m3-interactive ripple">✎</span> <span class="m3-icon-btn m3-interactive ripple">🎤</span> <span class="m3-icon-btn m3-interactive ripple">🖼️</span> <div class="m3-fab-tonal light m3-interactive ripple">+</div>
+              </div>
+
+              <div class="m3-pill-bar">
+                <span class="m3-icon-btn m3-interactive ripple">✕</span> <span class="m3-icon-btn m3-interactive ripple">🎤</span> <span class="m3-icon-btn m3-interactive ripple">🖐️</span> <span class="m3-icon-btn m3-interactive ripple">⋮</span> <div class="m3-fab-danger m3-interactive ripple" id="m3-call-btn">📞</div>
+              </div>
+
+              <div class="m3-pill-bar chat">
+                <span class="m3-chat-text" id="m3-chat-text">See you soon!</span> <span class="m3-emoji">😀</span> <div class="m3-fab-primary m3-interactive ripple" id="m3-send-btn">➤</div>
+              </div>
+            </div>
+
+            <!-- Col 3: Big Toggles -->
+            <div class="m3-col">
+              <div class="m3-toggles-grid" id="m3-toggles">
+                 <div class="m3-toggle-big m3-interactive ripple">B</div>
+                 <div class="m3-toggle-big m3-interactive ripple">A</div>
+                 <div class="m3-toggle-big m3-interactive ripple">L</div>
+
+                 <div class="m3-toggle-small active m3-interactive ripple">B</div>
+                 <div class="m3-toggle-small m3-interactive ripple">A</div>
+                 <div class="m3-toggle-small m3-interactive ripple">L</div>
+
+                 <div class="m3-toggle-small pink active m3-interactive ripple">B</div>
+                 <div class="m3-toggle-small pink m3-interactive ripple">A</div>
+                 <div class="m3-toggle-small pink m3-interactive ripple">L</div>
+              </div>
+            </div>
+
           </div>
         </article>
       </div>
@@ -228,80 +300,62 @@
       </div>
     </section>
 
-    <!-- SECTION 4: Study/Conclusion -->
-    <section id="study" class="section study">
-      <div class="study-container">
-        <h2>Сравнение подходов</h2>
-        <p class="study-lead">
-          Один и тот же инструмент — веб-дизайн — может быть либо системой правил, либо эмоциональным экспериментом.
-        </p>
+        <!-- SECTION 4: Project Conclusion -->
+    <section id="study" class="section study bento-layout">
+  <div class="study-container">
+    <div class="study-header">
+      <h2 class="study-title">Дизайн <span class="light-text">как баланс</span></h2>
+      <p class="study-lead">
+        Веб-интерфейсы всегда существуют на стыке двух полярных миров: <strong>строгой инженерии</strong>, решающей задачи пользователя, и <strong>свободного искусства</strong>, вызывающего эмоции.
+      </p>
+    </div>
 
-        <div class="compare-grid">
-          <article class="compare-card">
-            <h3>Material (Дуарте)</h3>
-            <ul>
-              <li>Четкая иерархия</li>
-              <li>Сетка и повторяемость</li>
-              <li>Высокая читабельность</li>
-              <li>Предсказуемое поведение интерфейса</li>
-            </ul>
-          </article>
-
-          <article class="compare-card">
-            <h3>Carson (хаос)</h3>
-            <ul>
-              <li>Нарушение правил</li>
-              <li>Эмоция важнее ясности</li>
-              <li>Типографический конфликт</li>
-              <li>Экспериментальная композиция</li>
-            </ul>
-          </article>
+    <div class="bento-grid">
+      <!-- Bento: Duarte -->
+      <article class="bento-item bento-duarte m3-interactive">
+        <div class="bento-icon">📐</div>
+        <div class="bento-content">
+          <h3>Матиас Дуарте</h3>
+          <span class="m3-badge">Material System</span>
+          <p>Дизайн как удобный сервис. Строится по строгим физическим законам: иерархия теней, четкие сетки, предсказуемость и инклюзивность.</p>
         </div>
+      </article>
 
-        <h3 class="mt">Таблица сравнения</h3>
-        <div class="table-wrap">
-          <table>
-            <thead>
-              <tr>
-                <th>Критерий</th>
-                <th>Material</th>
-                <th>Carson</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>Цель</td>
-                <td>Удобство и ясность</td>
-                <td>Эмоциональный эффект</td>
-              </tr>
-              <tr>
-                <td>Сетка</td>
-                <td>Строгая 12-колоночная</td>
-                <td>Намеренно ломается</td>
-              </tr>
-              <tr>
-                <td>Типографика</td>
-                <td>Иерархичная и читаемая</td>
-                <td>Контрастная, хаотичная</td>
-              </tr>
-              <tr>
-                <td>Анимация</td>
-                <td>Плавная, физичная</td>
-                <td>Резкая, дерганая</td>
-              </tr>
-            </tbody>
-          </table>
+      <!-- Bento: Carson -->
+      <article class="bento-item bento-carson m3-interactive">
+        <div class="bento-icon chaos-icon">🔥</div>
+        <div class="bento-content">
+          <h3 style="font-family: 'Permanent Marker', sans-serif; letter-spacing: 2px;">Дэвид Карсон</h3>
+          <span class="chaos-badge">Ray Gun / End of Print</span>
+          <p>Дизайн как искусство. Полное игнорирование классических сеток. Эмоциональный вихрь и эстетика всегда ставятся выше сухой читаемости.</p>
         </div>
+      </article>
 
-        <h3 class="mt">Вывод</h3>
-        <p>
-          Дуарте показывает, как сделать интерфейс универсальным и понятным, а Карсон — как превратить визуальную форму в высказывание.
-          В современном дизайне чаще всего работает баланс: структура + эмоция.
-        </p>
-      </div>
-    </section>
+            <!-- Editorial Final Banner -->
+      <article class="final-statement">
+        <div class="final-statement-inner">
+          <span class="final-label">Итог исследования</span>
+          <h3>Идеальный синтез</h3>
+          <p>
+            Мастерство современного веб-дизайнера — это умение балансировать между двумя полюсами. Мы используем <strong>строгую структуру и логику Дуарте</strong>, чтобы сделать цифровой продукт понятным и доступным для каждого, а затем добавляем <strong>эмоциональную дерзость Карсона</strong>, чтобы вдохнуть в него жизнь и сделать по-настоящему уникальным.
+          </p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
   </main>
 
   <script src="./script.js"></script>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+

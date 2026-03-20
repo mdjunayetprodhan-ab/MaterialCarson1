@@ -1,4 +1,4 @@
-"use strict";
+﻿"use strict";
 
 document.addEventListener("DOMContentLoaded", () => {
   initRipple();
@@ -317,3 +317,110 @@ function initCarsonExtras() {
     });
   });
 }
+/* ---------- M3 Interactions ---------- */
+function initM3Interactions() {
+  // 1. Lists - Checkmark toggle (Spin animation)
+  const list2 = document.getElementById('m3-list-2');
+  const fabPlus = document.getElementById('m3-fab-plus');
+  if (list2 && fabPlus) {
+    list2.addEventListener('click', () => {
+      // Small jump on the whole list item
+      list2.classList.remove('anim-jump');
+      void list2.offsetWidth; 
+      list2.classList.add('anim-jump');
+
+      if (fabPlus.innerText === '+') {
+        fabPlus.innerText = '✓';
+        fabPlus.style.background = '#eaddff';
+        fabPlus.style.color = '#21005d';
+        fabPlus.classList.remove('anim-spin');
+        void fabPlus.offsetWidth; // trigger reflow
+        fabPlus.classList.add('anim-spin');
+        list2.querySelector('.m3-list-sub').innerText = 'Goal recorded!';
+      } else {
+        fabPlus.innerText = '+';
+        fabPlus.style.background = 'var(--md-secondary)';
+        fabPlus.style.color = 'var(--md-on-secondary)';
+        fabPlus.classList.remove('anim-spin');
+        void fabPlus.offsetWidth;
+        fabPlus.classList.add('anim-spin');
+        list2.querySelector('.m3-list-sub').innerText = 'Record new fitness goals';
+      }
+    });
+  }
+
+  // 2. Chat Pill (Jump Emoji)
+  const sendBtn = document.getElementById('m3-send-btn');
+  const chatText = document.getElementById('m3-chat-text');
+  const emoji = document.querySelector('.m3-emoji');
+  if (sendBtn && chatText) {
+    sendBtn.addEventListener('click', () => {
+      const messages = ['See you soon!', 'On my way🚗', 'Sounds good!', 'Ready!✨'];
+      let currentVal = chatText.innerText;
+      let nextVal = messages[(messages.indexOf(currentVal) + 1) % messages.length];
+      
+      // Jump effect for emoji
+      if (emoji) {
+         emoji.classList.remove('anim-jump');
+         void emoji.offsetWidth;
+         emoji.classList.add('anim-jump');
+      }
+
+      chatText.style.opacity = '0';
+      setTimeout(() => {
+        chatText.innerText = nextVal;
+        chatText.style.transition = 'opacity 0.3s ease';
+        chatText.style.opacity = '1';
+      }, 150);
+    });
+  }
+
+  // 3. Danger Call Btn
+  const callBtn = document.getElementById('m3-call-btn');
+  if (callBtn) {
+    callBtn.addEventListener('click', () => {
+      if (callBtn.style.background === 'rgb(56, 106, 32)') {
+        callBtn.style.background = '#ba1a1a'; // red
+        callBtn.innerText = '📞';
+        callBtn.classList.remove('anim-spin');
+        void callBtn.offsetWidth;
+        callBtn.classList.add('anim-spin');
+      } else {
+        callBtn.style.background = '#386a20'; // green pattern
+        callBtn.innerText = '✓';
+        callBtn.classList.remove('anim-spin');
+        void callBtn.offsetWidth;
+        callBtn.classList.add('anim-spin');
+      }
+    });
+  }
+
+  // 4. Icons physics map (Wave, Pulse, etc.)
+  document.querySelectorAll('.m3-icon-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+       const text = btn.innerText.trim();
+       if (text === '🖐️') {
+         btn.classList.remove('anim-wave');
+         void btn.offsetWidth;
+         btn.classList.add('anim-wave');
+       } else if (text === '🎤') {
+         btn.classList.remove('anim-pulse');
+         void btn.offsetWidth;
+         btn.classList.add('anim-pulse');
+       } else {
+         btn.classList.remove('anim-jump');
+         void btn.offsetWidth;
+         btn.classList.add('anim-jump');
+       }
+    });
+  });
+
+  // 5. Toggles
+  document.querySelectorAll('.m3-toggle-big, .m3-toggle-small').forEach(t => {
+    t.addEventListener('click', () => {
+      t.classList.toggle('active');
+    });
+  });
+}
+
+document.addEventListener("DOMContentLoaded", initM3Interactions);
